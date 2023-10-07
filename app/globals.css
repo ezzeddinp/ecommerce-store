@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+:root {
+  height: 100%;
+}
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+
+    --primary: 220.9 39.3% 11%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+
+    --ring: 217.9 10.6% 64.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+
+    --primary: 210 20% 98%;
+    --primary-foreground: 220.9 39.3% 11%;
+
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+
+    --ring: 215 27.9% 16.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+body {
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.fade-in-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in-out.fade-in {
+  opacity: 1;
+}
+
+.fade-in-out.fade-out {
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.custom-left {
+  left: 90px;
+}
+
+.custom-left-red {
+  left: 470px;
+}
+
+.custom-left-delete {
+  left: 111px;
+}
+
+.carousel-content {
+  display: flex;
+  width: 100%;
+  /* Set the width to 100% to make it take the full width of the container */
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item {
+  flex: 0 0 25%;
+  /* Show 4 items in a row on larger screens */
+}
+
+/* Styles for tablet (e.g., iPad) */
+@media screen and (max-width: 1024px) {
+  .carousel-item {
+    flex: 0 0 33.33%;
+    /* Show 3 items in a row on tablets */
+  }
+}
+
+/* Styles for mobile devices */
+@media screen and (max-width: 640px) {
+  .carousel-item {
+    flex: 0 0 100%;
+    /* Show 1 item in a row on mobile devices */
+  }
+}
+
+
+.scrollable-x-container {
+  padding: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior: none;
+}
+
+.scrollable-x-container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-content {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 5px;
+  transition: transform 0.3s ease-in-out;
+  /* Add margin to the sides to create space for the shadow */
+  margin: 0 -10px;
+}
+
+.carousel-item {
+  flex: 0 0 25%;
+  /* Add box-shadow to create the shadow effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Adjust the spacing between the shadow and the product cards */
+  padding: 10px;
+}
+
+/* Styles for tablet (e.g., iPad) */
+@media screen and (max-width: 1024px) {
+  .carousel-item {
+    flex: 0 0 33.33%;
+  }
+}
+
+/* Styles for mobile devices */
+@media screen and (max-width: 640px) {
+  .carousel-item {
+    flex: 0 0 100%;
+  }
+}
+
+
+/* Add this CSS to your global or component styles */
+
+
